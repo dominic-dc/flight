@@ -108,7 +108,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 							while ($row = $flight->fetch_assoc()) :
 								$guestpass = $conn->query("SELECT * FROM booked_flight where flight_id = " . $row['id']);
 								$booked = $conn->query("SELECT * FROM booked_flight where flight_id = " . $row['id'])->num_rows;
-								if($guestpass->num_rows>0){
+								if($guestpass->num_rows>=0){
 									while ($rows = $guestpass->fetch_assoc()) {
 										$availableset = $rows['Guest'];
 										$availableset = $booked+$availableset;
