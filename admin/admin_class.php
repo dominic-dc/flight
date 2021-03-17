@@ -224,6 +224,7 @@ class Action
 		if ($delete)
 			return 1;
 	}
+
 	function book_flight()
 	{
 		extract($_POST);
@@ -232,12 +233,14 @@ class Action
 			$data .= " , name = '$name[$k]' ";
 			$data .= " , address = '$address[$k]' ";
 			$data .= " , contact = '$contact[$k]' ";
+			$data .= " , Guest = '$guest[$k]' ";
 
 			$save[] = $this->db->query("INSERT INTO booked_flight set " . $data);
 		}
 		if (isset($save))
 			return 1;
 	}
+
 	function update_booked()
 	{
 		extract($_POST);

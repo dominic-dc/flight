@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 16, 2021 at 10:36 AM
+-- Generation Time: Mar 17, 2021 at 06:17 AM
 -- Server version: 10.4.18-MariaDB
 -- PHP Version: 8.0.3
 
@@ -76,16 +76,16 @@ CREATE TABLE `booked_flight` (
   `flight_id` int(30) NOT NULL,
   `name` text NOT NULL,
   `address` text NOT NULL,
-  `contact` text NOT NULL
+  `contact` text NOT NULL,
+  `Guest` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `booked_flight`
 --
 
-INSERT INTO `booked_flight` (`id`, `flight_id`, `name`, `address`, `contact`) VALUES
-(2, 3, 'James Smith', 'Sample Address', '+4545 6456'),
-(3, 4, 'John Smith', 'Sample Address', '+18456-5455-55');
+INSERT INTO `booked_flight` (`id`, `flight_id`, `name`, `address`, `contact`, `Guest`) VALUES
+(26, 5, 'karlerol', 'Lakan dula tulip st', '0928612090', 4);
 
 -- --------------------------------------------------------
 
@@ -115,7 +115,9 @@ INSERT INTO `flight_list` (`id`, `airline_id`, `plane_no`, `departure_airport_id
 (2, 2, 'TIPS14-15', 1, 2, '2020-10-14 11:00:00', '2020-10-16 09:00:00', 100, 5000, '2020-09-25 11:46:12'),
 (3, 3, 'CEB-1101', 5, 1, '2020-09-30 08:00:00', '2020-09-30 08:45:00', 100, 2500, '2020-09-25 11:57:31'),
 (4, 3, 'CEB10023', 1, 5, '2020-10-07 01:00:00', '2020-10-07 01:45:00', 100, 2500, '2020-09-25 14:50:47'),
-(5, 1, '1', 2, 1, '2021-03-27 16:49:00', '2021-03-31 16:49:00', 19, 2500, '2021-03-16 16:50:11');
+(5, 1, '1', 2, 1, '2021-03-27 16:49:00', '2021-03-31 16:49:00', 150, 2500, '2021-03-16 16:50:11'),
+(6, 1, '2', 1, 2, '2021-03-27 13:02:00', '2021-03-31 13:02:00', 150, 1000, '2021-03-17 13:03:03'),
+(7, 1, '3', 2, 1, '2021-03-27 13:13:00', '2021-03-31 13:13:00', 150, 1000, '2021-03-17 13:13:15');
 
 -- --------------------------------------------------------
 
@@ -137,7 +139,7 @@ CREATE TABLE `system_settings` (
 --
 
 INSERT INTO `system_settings` (`id`, `name`, `email`, `contact`, `cover_img`, `about_content`) VALUES
-(1, 'IConnect', 'Singko@Gmail.com', '+6948 8542 623', '1615885140_image.jpg', '&lt;p style=&quot;text-align: justify; background: transparent; position: relative;&quot;&gt;&lt;font color=&quot;#000000&quot; face=&quot;Open Sans, Arial, sans-serif&quot;&gt;&lt;b&gt;iConnect is a company that offers an easy to find flight tickets through online booking. We created a universal online booking ticket that accommodates airlines in the Philippines, such as Cebu Pacific, Philippine Airlines, and AirAsia&amp;#x2019;s ticket schedules. The team gives each client an easy-go-website and smooth online book in each airline.&lt;/b&gt;&lt;/font&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;');
+(1, 'IConnect', 'singkohelp@gmail.com', '+6948 8542 623', '1615885140_image.jpg', '&lt;p style=&quot;text-align: justify; background: transparent; position: relative;&quot;&gt;&lt;font color=&quot;#000000&quot; face=&quot;Open Sans, Arial, sans-serif&quot; style=&quot;text-align: justify; background: transparent; position: relative;&quot;&gt;&lt;span style=&quot;font-size:28px;text-align: justify; background: transparent; position: relative;&quot;&gt;&lt;b style=&quot;text-align: justify; background: transparent; position: relative; font-size: 28px;&quot;&gt;iConnect &lt;/b&gt;is a company that offers an easy to find flight tickets through online booking. We created a universal online booking ticket that accommodates airlines in the Philippines, such as Cebu Pacific, Philippine Airlines, and AirAsia&rsquo;s ticket schedules. The team gives each client an easy-go-website and smooth online book in each airline.&lt;/span&gt;&lt;/font&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;');
 
 -- --------------------------------------------------------
 
@@ -188,7 +190,8 @@ ALTER TABLE `airport_list`
 -- Indexes for table `booked_flight`
 --
 ALTER TABLE `booked_flight`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `Guest` (`id`);
 
 --
 -- Indexes for table `flight_list`
@@ -228,13 +231,13 @@ ALTER TABLE `airport_list`
 -- AUTO_INCREMENT for table `booked_flight`
 --
 ALTER TABLE `booked_flight`
-  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT for table `flight_list`
 --
 ALTER TABLE `flight_list`
-  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `system_settings`
