@@ -234,6 +234,7 @@ class Action
 			$data .= " , address = '$address[$k]' ";
 			$data .= " , contact = '$contact[$k]' ";
 			$data .= " , Guest = '$guest[$k]' ";
+			$data .= " , Flight_Number = $Flight_Number ";
 
 			$save[] = $this->db->query("INSERT INTO booked_flight set " . $data);
 		}
