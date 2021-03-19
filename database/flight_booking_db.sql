@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.0
+-- version 5.0.4
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 17, 2021 at 06:17 AM
--- Server version: 10.4.18-MariaDB
--- PHP Version: 8.0.3
+-- Generation Time: Mar 19, 2021 at 03:36 PM
+-- Server version: 10.4.17-MariaDB
+-- PHP Version: 8.0.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -77,15 +77,25 @@ CREATE TABLE `booked_flight` (
   `name` text NOT NULL,
   `address` text NOT NULL,
   `contact` text NOT NULL,
-  `Guest` int(11) NOT NULL
+  `Guest` int(11) NOT NULL,
+  `Flight_Number` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `booked_flight`
 --
 
-INSERT INTO `booked_flight` (`id`, `flight_id`, `name`, `address`, `contact`, `Guest`) VALUES
-(26, 5, 'karlerol', 'Lakan dula tulip st', '0928612090', 4);
+INSERT INTO `booked_flight` (`id`, `flight_id`, `name`, `address`, `contact`, `Guest`, `Flight_Number`) VALUES
+(26, 5, 'karlerol', 'Lakan dula tulip st', '0928612090', 4, 1234567890),
+(27, 6, 'Dominic', '057 lalala trinidad', '121424342', 3, 1234567890),
+(28, 6, 'Next', '456 street', '2394390', 5, 1234567890),
+(29, 6, 'Sotelo', 'Pasay City', '123456789', 6, 1234567890),
+(30, 5, 'Soliano', 'Manila', '5647342', 10, 1234567890),
+(31, 6, 'Dummy', 'Bulacan', '14232434', 11, 1234567890),
+(32, 5, 'aNOTHER', 'Bocaue', '43898943', 78, 1234567890),
+(33, 6, 'Pasion', 'Lakandula', '8639459', 23, 0),
+(34, 6, 'em', 'Pasig', '274238', 34, 1486203131),
+(35, 5, 'Dela Cruz', 'Bocaue, Bulacan', '0995-460-6404', 10, 2147483647);
 
 -- --------------------------------------------------------
 
@@ -231,7 +241,7 @@ ALTER TABLE `airport_list`
 -- AUTO_INCREMENT for table `booked_flight`
 --
 ALTER TABLE `booked_flight`
-  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 
 --
 -- AUTO_INCREMENT for table `flight_list`
