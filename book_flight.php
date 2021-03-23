@@ -2,7 +2,7 @@
 	<div class="col-lg-12">
 	<form action="" id="book-flight">
 		<input type="hidden" name="flight_id" value="<?php echo $_GET['id'] ?>">
-		<input type="hidden" name="Flight_Number" value="<?php echo rand(1000000000, 9999999999)?>">
+		<input type="hidden" name="Flight_Number" value="<?php echo rand(100000, 999999); ?>"> 
 		<div class="form-group row" id="qty">
 			<div class="col-md-3">
 			<label for="" class="control-label">Person/s</label>
